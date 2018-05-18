@@ -1,0 +1,135 @@
+/* pages/home/home.wxss */
+
+.banering{
+  width: 100%;
+  height: 340rpx;
+  background: #fff
+}
+.banering image{
+  height:340rpx;
+  width: 100%;
+}
+.home_h{
+  padding: 0 25rpx;
+  border-bottom:10rpx solid #f4f4f4; 
+}
+.home_head{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #000;
+  padding: 40rpx 0;
+  margin-bottom: 5rpx;
+}
+.home_time{
+  display: flex;
+  padding-top: 16rpx;
+  box-sizing: border-box;
+  position:relative ;
+}
+.home_time1{
+  border-bottom: 1rpx dotted  #bbbbbb;
+  height: 64rpx;
+}
+.home_time image{
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin-right: 17rpx
+}
+.home_time_h{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  margin-right: 26rpx;
+  
+}
+.home_time_i{
+  font-size: 24rpx;
+  color: #000;
+  width: 430rpx;
+}
+.home_time_p{
+  height: 40rpx;
+  border-left: 1rpx solid #e5e5e5;
+  width: 90rpx;
+  position: absolute;
+  right: 0;
+}
+.home_time_p image {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  padding: 5rpx
+}
+.home_time2{
+  margin-bottom:30rpx; 
+}
+.home_list{
+  padding: 0 25rpx;
+}
+.home_list_h{
+  padding: 37rpx 0;
+}
+.home_list_h text{
+  margin-top:8rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #000 
+}
+.home_list_li{
+  display: flex;
+  height: 150rpx;
+  position: relative;
+  padding-top:40rpx;
+  margin-bottom:40rpx;
+  border-top:1rpx solid #ccc
+}
+.home_list_li image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.home_list_li_t{
+  width: 410rpx;
+  margin-left: 30rpx;
+  height: 150rpx;
+  position: relative
+}
+.home_list_li_g{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100rpx;
+}
+.home_list_li_g button{
+  width: 100rpx;
+  height: 50rpx;
+  background: #ee9058;
+  color: #fff;
+  font-size: 20rpx;
+  border: 0;
+}
+.home_list_li_h{
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 600
+}
+.home_list_li_yishou{
+  color: #e3e3e3;
+  font-size: 22rpx;
+  margin-top:20rpx 
+}
+.home_list_li_j{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.home_list_li_j1{
+  font-size: 28rpx;
+  color: #ee9058;
+  font-weight: 600;
+}
+.home_list_li_j2{
+  font-size: 22rpx;
+  color: #ccc;
+  margin-left:18rpx;
+  text-decoration: line-through 
+}

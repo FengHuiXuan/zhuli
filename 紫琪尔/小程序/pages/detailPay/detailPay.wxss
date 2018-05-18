@@ -1,0 +1,157 @@
+/* pages/detailPay/detailPay.wxss */
+.detailPay_box{
+  padding: 50rpx;
+}
+.detailPay_head{
+  height: 120rpx;
+  display: flex;
+  padding-bottom:60rpx;
+  border-bottom:1px solid #e5e5e5  
+}
+.detailPay_head image{
+  height: 120rpx;
+  width: 120rpx;
+}
+.detailPay_head_m{
+  flex: 1;
+  margin-left: 22rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  height: 120rpx
+}
+.detailPay_head_m1{
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 600
+}
+.detailPay_head_m2{
+ display: flex
+}
+.detailPay_head_m2_q{
+  font-size: 30rpx;
+  color: #ee9058;
+  font-weight: 600;
+  flex: 1
+}
+.detailPay_head_m2_ {
+  display: flex
+}
+.detailPay_head_m2_ view{
+  width: 36rpx;
+  height: 36rpx;
+  background: #f6f6f6;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.detailPay_head_m2_ text{
+    width: 70rpx;
+    height: 36rpx;
+    background: #f6f6f6;
+    font-size: 30rpx;
+    margin: 0 2rpx;
+    line-height: 36rpx;
+    text-align: center;
+}
+.detailPay_tijiao{
+  margin-top:40rpx; 
+}
+.detailPay_tijiao_{
+  display: flex;
+  height: 60rpx;
+}
+.detailPay_tijiao_p{
+  width: 100rpx;
+  text-align: right;
+  font-size: 25rpx;
+  color: #000;
+  line-height: 60rpx
+}
+.detailPay_tijiao_p_{
+  flex: 1;
+  text-align: right;
+  font-size: 25rpx;
+  color: #000;
+  line-height: 60rpx
+}
+.detailPay_tijiao_p_color{
+  color: #ee9058
+}
+.detailPay_btn{
+  width: 100%;
+  height: 80rpx;
+  background: #ee9058;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 80rpx;
+  margin-top: 50rpx
+}
+.puptap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.puptap_box{
+  width: 560rpx;
+  height: 550rpx;
+  background: #fff;
+  padding: 70rpx
+}
+.puptap_box_h{
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+.puptap_box_m{
+  font-size: 24rpx;
+  color: #c8c8c8;
+  margin-bottom: 50rpx;
+}
+.puptap_box_phone{
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #919191;
+  padding-left: 35rpx;
+  border: 1px solid #e5e5e5;
+  border-radius:5rpx;
+  margin-bottom: 20rpx; 
+}
+.puptap_box_huoqu{
+  display: flex;
+}
+.puptap_box_huoqu input{
+  flex: 1;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #919191;
+  padding-left: 35rpx;
+  border: 1px solid #e5e5e5;
+  border-radius:5rpx;
+  margin-bottom: 20rpx; 
+}
+.puptap_box_huoqu button{
+  height: 70rpx;
+  width: 190rpx;
+  border: 1px solid #ee9058;
+  color: ee9058;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 25rpx;
+  margin-left: 17rpx
+}
+.puptap_box_btn{
+  margin-top: 45rpx;
+  background: #ee9058;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600
+}

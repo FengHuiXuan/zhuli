@@ -1,0 +1,25 @@
+<view class='comment_box'>
+  <view class='comment_box_head'>
+    <image src='../../images/home/list.png'></image>
+    <view class='comment_box_head_center'>
+      <view class='comment_box_head_center1'>单人美容</view>
+      <view class='comment_box_head_center2'>X1</view>
+      <view class='comment_box_head_center3'>￥456</view>
+    </view>
+    <view class='comment_box_head_right'>></view>
+  </view>
+  <view class='comment_box_'>
+    <view class="comment_box_textarea"><textarea placeholder="请输入评价内容"></textarea></view>
+    <view class="comment_box_img">
+      <view wx:for="{{imglist}}">
+        
+        <view>
+          <image class='comment_box_close' data-index='{index}' bindtap='failDelete' src="../../images/home/pay-fail.png"/>
+          <image class='comment_box_image' src="{{item}}"/>
+        </view>
+      </view>
+      <view wx:if = '{{imglist.length == 9 ? false : true}}' bindtap='addImg'><image class='comment_box_imgadd' src='../../images/home/upload-pic.png'/></view>
+    </view>
+    <view class='comment_box_btn'><button bindtap='submitp'>提交订单</button></view>
+  </view>
+</view>

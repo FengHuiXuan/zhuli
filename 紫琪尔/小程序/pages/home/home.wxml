@@ -1,0 +1,39 @@
+<view>
+  <view class="banering">
+    <image src="../../images/home/ban.png"/>
+  </view>
+  <view class="home_h">
+    <view class='home_head'><text>紫启尔国际丰胸美容机构（祥云小镇轻奢店）</text></view>
+    <view class='home_time home_time1'>
+      <image src="../../images/home/clock.png"/>
+      <text class='home_time_h'>营业时间</text>
+      <text class='home_time_i'>周一到周日 09：00-20：30</text>
+    </view>
+    <view class='home_time home_time2'>
+      <image src="../../images/home/map.png"/>
+      <view class='home_time_h'>地理位置</view>
+      <view class='home_time_i'>安泰大街9号院祥云小镇8号楼10层1001室</view>
+      <view class='home_time_p' bindtap='homePhone'><image src="../../images/home/iconfont-phone.png"/></view>
+    </view>
+  </view>
+  <view class='home_list'>
+    <view class='home_list_h'><text>服务列表</text></view>
+    <view class='home_list_'>
+      <view wx:for="{{homeList}}" wx:key class='home_list_li' data-id='{{item.id}}' bindtap='detailpage'>
+        <image src="{{item.service_thumb_url}}"/>
+        <view class='home_list_li_t'>
+          <view class='home_list_li_h'><text>{{item.service_name}}</text></view>
+          <view class="home_list_li_yishou"><text>已售 {{item.service_sum}}</text></view>
+          <view class="home_list_li_j">
+            <text class='home_list_li_j1'>￥{{item.service_discount}}</text>
+            <text class='home_list_li_j2'>￥{{item.service_prices}}</text>
+          </view>
+        </view>
+        <view class='home_list_li_g'>
+          <button>抢购</button>
+        </view>
+      </view>
+      <view class='nonelist'>{{homemessage}}</view>
+    </view>
+  </view>
+</view>

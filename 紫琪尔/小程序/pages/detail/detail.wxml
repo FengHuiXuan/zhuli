@@ -1,0 +1,83 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view>
+  <view class='swiper'>
+    <swiper class='swipers' indicator-dots="{{indicatorDots}}"
+    autoplay="true" interval="2000" duration="500" circular="true" indicator-dots="true" indicator-active-color="#ebad87" indicator-color="#e5e5e5">
+    <block wx:for="{{imgUrls}}" wx:key>
+      <swiper-item>
+        <image src="{{item}}" data-previewImg='{{item}}' bindtap='previewImg' class="slide-images" />
+      </swiper-item>
+    </block>
+    </swiper>
+  </view>
+  <view class='detail_view'>
+    <view class="detail_head" >
+      <view class="detail_head_h2" >
+        <text>{{services.service_name}}</text>
+      </view>
+      <view class='detail_head_p'>
+        <text class='detail_head_z'>￥{{services.service_discount}}</text>
+        <text class='detail_head_c'>￥{{services.service_prices}}</text>
+        <text class='detail_head_y'>已售{{services.service_sum}}</text>
+      </view>
+    </view>
+    <view class="detail_tab" >
+      <view  wx:for="{{['服务详情','购买须知','用户评价']}}" wx:key
+       data-index='{{index}}' bindtap='detail_tab' 
+      class="detail_tab_li {{tabbar == index?'detail_tab_li_active':''}}">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class='detail_message'>
+      <view  hidden="{{tabbar == 0? false : true}}">
+       <template is="wxParse" data="{{wxParseData:service_content.nodes}}"/>
+      </view>
+      <view  hidden="{{tabbar == 1? false : true}}">
+       <template is="wxParse" data="{{wxParseData:service_notice.nodes}}"/>
+      </view>
+      <view class="detail_comment"  hidden="{{tabbar == 2? false : true}}">
+          <view  class='detail_comment_list'>
+            <view class='detail_comment_list_litle'>
+              <image class='detail_comment_list_img' src="../../images/home/ban.png"/>
+              <view class='detail_comment_list_item'>
+                <view class='detail_comment_list_item_e'>
+                  <text>嗷嗷叫的小猫咪</text>
+                  <text class='detail_comment_list_text'>2018.05.14</text>
+                </view>
+                <view class='detail_comment_list_item_messabe'>
+                  <text>法规和地方价格的放开几个地方看了感觉对方考虑过大概几点分开了；国际是登陆关键是对方考虑感觉到法律框架</text>
+                </view>
+                <view class='detail_comment_list_item_img'>
+                 <scroll-view class='scroll_detail_comment' scroll-x>
+                  <image wx:for="{{[1,2,3,45,1,1,1,1,1,1]}}" wx:key src='{{names.path}}' mode='aspectFit'></image>  
+                 </scroll-view>
+                </view>
+                <view class='scroll_detail_comment_shangjia'>
+                  <view class='scroll_detail_comment_shangjia_h'>
+                    <image src="../../images/home/xinx.png"/>
+                    <text class='scroll_detail_comment_shangjia_m'>商家回复</text>
+                    <text class='scroll_detail_comment_shangjia_j'>2018.05.12</text>
+                  </view>
+                  <view class='scroll_detail_comment_huifu'>
+                    <text>定金呢我肯定看了；鬼地方了；给对方两个地方水电费水电费水电费胜多负少的发大范甘迪发郭德纲电饭锅地方</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            
+          </view>
+
+      </view>
+    </view>
+  </view>
+  <view class='bottom_tab'>
+    <view class='bottom_tab1'>
+      <text class='bottom_tab1_1'>￥123</text>
+      <text class='bottom_tab1_2'>￥121</text>
+    </view>
+    <view class='bottom_tab2' bindtap='qianggou'>立即抢购</view>
+  </view>
+</view>
+<view class='getuserInfo' wx:if="{{getuserInfobtn}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取信息</button> 
+</view>

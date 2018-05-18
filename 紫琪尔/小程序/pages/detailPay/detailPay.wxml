@@ -1,0 +1,39 @@
+
+<view class='detailPay_box'>
+  <view class="detailPay_head">
+    <image src="../../images/home/list.png"/>
+    <view class='detailPay_head_m'>
+      <view class='detailPay_head_m1'>{{detailPaymes.service_name}}</view>
+      <view class='detailPay_head_m2'>
+        <view class='detailPay_head_m2_q'>￥{{detailPaymes.service_discount}}</view>
+        <view class='detailPay_head_m2_'>
+          <text>1</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='detailPay_tijiao'>
+    <view class='detailPay_tijiao_'>
+      <view class='detailPay_tijiao_p'>手机号</view>
+      <view class='detailPay_tijiao_p_'><text>18732165456</text></view>
+    </view>
+    <view class='detailPay_tijiao_'>
+      <view class='detailPay_tijiao_p'>小计</view>
+      <view class='detailPay_tijiao_p_ detailPay_tijiao_p_color'><text >￥{{detailPaymes.service_discount}}</text></view>
+    </view>
+  </view>
+  <button class='detailPay_btn' bindtap='submitorder'>提交订单</button>
+</view>
+<view class='puptap' wx:if='{{popUpstate}}'>
+  <view class='puptap_box'>
+    <view class='puptap_box_h'>温馨提示</view>
+    <view class='puptap_box_m'>为了能够更好的为您服务请先绑定您的手机号</view>
+    <input class='puptap_box_phone' bindinput="bindinputPhone" placeholder="输入手机号"  type='number' />
+    <view class='puptap_box_huoqu'>
+      <input class='puptap_box_phone' bindinput="bindinputverify"  placeholder="输入验证码"  />
+      <button bindtap='acquire'>获取验证码</button>
+    </view>
+    <button class='puptap_box_btn' bindtap='submitPay' >确定</button>
+  </view>
+</view>
+

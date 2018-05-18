@@ -1,0 +1,30 @@
+/**app.wxss**/
+@import "./wxParse/wxParse.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.getuserInfo{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nonelist{
+  text-align: center;
+  font-size: 30rpx;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  color: #000
+}
+

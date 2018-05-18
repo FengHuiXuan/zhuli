@@ -1,0 +1,54 @@
+<view class="my_box">
+  <view class='my_box_head'>
+    <view class='my_box_head_'>
+      <image src="{{userInfo.avatarUrl}}"/>
+      <view>{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view class='my_box_order'>
+    我的订单
+  </view>
+  <view class='my_box_tab'>
+    <view class='my_box_li' data-index='0' bindtap='orderAll'>
+      <view class='my_box_li_i'>
+        <image src='../../images/home/crat.png'/>
+      </view>
+      <view class='my_box_li_text'>
+        <view  class='my_box_li_text1'>全部订单</view>
+        <view  class='my_box_li_text2'>共有5个订单</view>
+      </view>
+    </view>
+    <view class='my_box_li' data-index='1' bindtap='orderAll'>
+     <view class='my_box_li_i'>
+        <image src='../../images/home/daipay.png'/>
+      </view>
+      <view class='my_box_li_text'>
+        <view  class='my_box_li_text1'>待付款</view>
+        <view  class='my_box_li_text2'>1个待付款</view>
+      </view>
+    </view>
+    <view class='my_box_li' data-index='2' bindtap='orderAll'>
+     <view class='my_box_li_i'>
+        <image src='../../images/home/kesy.png'/>
+      </view>
+      <view class='my_box_li_text'>
+        <view  class='my_box_li_text1'>可使用</view>
+        <view  class='my_box_li_text2'>1个可使用订单</view>
+      </view>
+    </view>
+    <view class='my_box_li' data-index='3' bindtap='orderAll'>
+     <view class='my_box_li_i'>
+        <image src='../../images/home/pingjia.png'/>
+      </view>
+      <view class='my_box_li_text'>
+        <view  class='my_box_li_text1'>待评价</view>
+        <view  class='my_box_li_text2'>1个待评价订单</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='getuserInfo' wx:if="{{getuserInfobtn}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取信息</button> 
+</view>
+
