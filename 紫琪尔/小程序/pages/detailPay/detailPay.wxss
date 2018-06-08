@@ -6,7 +6,7 @@
   height: 120rpx;
   display: flex;
   padding-bottom:60rpx;
-  border-bottom:1px solid #e5e5e5  
+  border-bottom:1px dashed #e5e5e5  
 }
 .detailPay_head image{
   height: 120rpx;
@@ -23,7 +23,7 @@
 .detailPay_head_m1{
   font-size: 28rpx;
   color: #000;
-  font-weight: 600
+  font-weight: bold;
 }
 .detailPay_head_m2{
  display: flex
@@ -31,7 +31,7 @@
 .detailPay_head_m2_q{
   font-size: 30rpx;
   color: #ee9058;
-  font-weight: 600;
+  font-weight: bold;
   flex: 1
 }
 .detailPay_head_m2_ {
@@ -48,7 +48,7 @@
 .detailPay_head_m2_ text{
     width: 70rpx;
     height: 36rpx;
-    background: #f6f6f6;
+    -background: #f6f6f6;
     font-size: 30rpx;
     margin: 0 2rpx;
     line-height: 36rpx;
@@ -64,14 +64,14 @@
 .detailPay_tijiao_p{
   width: 100rpx;
   text-align: right;
-  font-size: 25rpx;
+  font-size: 24rpx;
   color: #000;
   line-height: 60rpx
 }
 .detailPay_tijiao_p_{
   flex: 1;
   text-align: right;
-  font-size: 25rpx;
+  font-size: 24rpx;
   color: #000;
   line-height: 60rpx
 }
@@ -84,7 +84,7 @@
   background: #ee9058;
   color: #fff;
   font-size: 30rpx;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 80rpx;
   margin-top: 50rpx
 }
@@ -103,12 +103,12 @@
   width: 560rpx;
   height: 550rpx;
   background: #fff;
-  padding: 70rpx
+  padding: 50rpx
 }
 .puptap_box_h{
   font-size: 30rpx;
   color: #000;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 10rpx;
 }
 .puptap_box_m{
@@ -117,41 +117,49 @@
   margin-bottom: 50rpx;
 }
 .puptap_box_phone{
-  height: 70rpx;
+  height: 71rpx;
   font-size: 28rpx;
   color: #919191;
   padding-left: 35rpx;
   border: 1px solid #e5e5e5;
-  border-radius:5rpx;
-  margin-bottom: 20rpx; 
+  border-radius:4rpx;
+  margin-bottom: 30rpx; 
 }
 .puptap_box_huoqu{
   display: flex;
 }
 .puptap_box_huoqu input{
   flex: 1;
-  height: 70rpx;
+  height: 71rpx;
   font-size: 28rpx;
   color: #919191;
   padding-left: 35rpx;
-  border: 1px solid #e5e5e5;
-  border-radius:5rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius:4rpx;
   margin-bottom: 20rpx; 
 }
-.puptap_box_huoqu button{
-  height: 70rpx;
+.puptap_box_huoqu view{
+  height: 71rpx;
   width: 190rpx;
-  border: 1px solid #ee9058;
-  color: ee9058;
-  line-height: 70rpx;
+  border: 1rpx solid #ee9058;
+  color: #ee9058;
+  line-height: 71rpx;
   text-align: center;
   font-size: 25rpx;
-  margin-left: 17rpx
+  margin-left: 30rpx;
+  background: none;
+  border-radius: 4rpx
 }
 .puptap_box_btn{
   margin-top: 45rpx;
   background: #ee9058;
   color: #fff;
   font-size: 30rpx;
-  font-weight: 600
+  font-weight: bold;
+  border: 0;
+  height: 82rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 82rpx;
+  border-radius:5rpx;
 }

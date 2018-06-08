@@ -1,0 +1,6 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='shop_box'>
+  <template is="wxParse" data="{{wxParseData:service_content.nodes}}"/>
+</view>
+
+<view wx:if="{{shopstate}}" class='serve-particulars'><button bindtap='lookContent'>查看活动内容</button></view>

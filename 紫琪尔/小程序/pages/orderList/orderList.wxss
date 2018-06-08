@@ -10,23 +10,43 @@
   color: #fff;
   font-size: 25rpx;
   line-height: 92rpx;
-  height: 92
+  height: 92;
+  text-align: center
+}
+/* .orderList_tabbar .orderList_tabbar_li_active{
+   color: #ee9058;
+   border-bottom: 2rpx solid #ee9058
+} */
+.orderList_tabbar_li_text2{
+  display: flex;
+  justify-content: center;
+  height: 2rpx;
 }
 .orderList_tabbar .orderList_tabbar_li_active{
    color: #ee9058;
-   border-bottom: 2rpx solid #ee9058
+} 
+.orderList_tabbar_li_active .orderList_tabbar_li_text2>view{
+  background: #ee9058;
 }
+.orderList_tabbar_li_text2>view{
+  width: 14rpx;
+  height: 2rpx;
+}
+.orderList_tabbar_li_text{
+  line-height: 90rpx;
+  white-space:nowrap;
+}
+
 .orderList_neir{
  
 } 
 .orderList_neir_li{
   border-top: 10rpx solid #f4f4f4;
-  padding: 0 26rpx ;
 }
 .orderList_number{
-  padding: 30rpx 0;
+  padding: 30rpx 26rpx;
   display: flex;
-  font-size: 23rpx;
+  font-size: 24rpx;
   color: #666;
 }
 .orderList_number_{
@@ -38,7 +58,8 @@
 .orderList_commodity{
   display: flex;
   flex-wrap:nowrap; 
-  background: #fafafa
+  background: #fafafa;
+  padding: 20rpx 26rpx
 }
 .orderList_commodity_img{
   width: 80rpx;
@@ -55,21 +76,21 @@
 .orderList_commodity_particulars1{
   font-size: 25rpx;
   color: #000;
-  font-weight: 600;
+  font-weight: bold;
 }
 .orderList_commodity_particulars2{
-  font-size: 22rpx;
-  color: #a9a9a9
+  font-size: 20rpx;
+  color: #a9a9a9;
+
 }
 .orderList_commodity_price{
   font-size:23rpx;
   color: #000;
   display: flex;
-  align-items: center
+  padding-top:12rpx 
 }
 .orderList_btn{
-  height: 85rpx;
-  padding: 20rpx 0;
+  padding: 20rpx 26rpx;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -84,14 +105,15 @@
   text-align: center;
   background: none;
   color: #000;
-  border: 1px solid #e5e5e5;
-  border-radius:5rpx;
-  margin-left:15rpx  
+  border: 1rpx solid #e5e5e5;
+  border-radius:4rpx;
+  margin-left:15rpx;
 }
-.orderList_btn .orderList_btn1{
+.orderList_btn>text:last-of-type{
   color: #ee9058;
   border: 1px solid #ee9058;
 }
+
 .orderList_pup{
   position: fixed;
   left: 0;
@@ -118,12 +140,12 @@
 .orderList_kuang_yard{
   padding-top:10rpx;
   padding-bottom:30rpx;  
-  border-bottom: 1px solid #444343;
+  border-bottom: 1px dashed #444343;
   display: flex;
   flex-wrap: nowrap;
 }
 .orderList_kuang_head{
-  background: #000;
+  background:#2c2b2b;
   padding: 40rpx;
 }
 .orderList_kuang_yard>view{
@@ -135,7 +157,6 @@
 .orderList_kuang_yard>image{
   height: 30rpx;
   width: 157rpx;
-  background: red;
 }
 .orderList_kuang_phone{
   margin-top: 30rpx;
@@ -146,13 +167,18 @@
 }
 .orderList_kuang_time{
   text-align: center;
-   font-size: 20rpx;
+  font-size: 20rpx;
   color: #fff
 }
 .orderList_kuang_body{
   background: #fff;
   padding: 40rpx;
-  max-height:260rpx
+  max-height:440rpx;
+  box-sizing: border-box;
+}
+.orderList_kuang_body_scroll-view{
+  max-height: 360rpx;
+  width: 480rpx
 }
 .orderList_kuang_body_li{
   padding: 0 20rpx;
@@ -161,4 +187,9 @@
   line-height: 60rpx; 
   display: flex;
   justify-content: space-between
+}
+.orderList_kuang_body_none{
+  color: #666;
+  font-size: 26rpx;
+  text-align: center
 }

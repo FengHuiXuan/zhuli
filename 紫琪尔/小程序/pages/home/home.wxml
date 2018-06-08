@@ -1,9 +1,16 @@
 <view>
   <view class="banering">
-    <image src="../../images/home/ban.png"/>
+    <swiper class='swipers' 
+    autoplay="true" interval="2000" duration="500" circular="true" indicator-dots="true" indicator-active-color="#ebad87" indicator-color="#e5e5e5">
+    <block wx:for="{{listbanerLise}}" wx:key>
+      <swiper-item>
+        <image src="{{item.pic_url}}" data-previewImg='{{item}}'  bindtap='previewImg' class="slide-images" />
+      </swiper-item>
+    </block>
+    </swiper>
   </view>
   <view class="home_h">
-    <view class='home_head'><text>紫启尔国际丰胸美容机构（祥云小镇轻奢店）</text></view>
+    <view class='home_head'><text>紫琪尔国际丰胸美容机构（祥云小镇轻奢店）</text></view>
     <view class='home_time home_time1'>
       <image src="../../images/home/clock.png"/>
       <text class='home_time_h'>营业时间</text>
@@ -12,7 +19,10 @@
     <view class='home_time home_time2'>
       <image src="../../images/home/map.png"/>
       <view class='home_time_h'>地理位置</view>
-      <view class='home_time_i'>安泰大街9号院祥云小镇8号楼10层1001室</view>
+      <view class='home_time_i' >
+        <view bindtap='shopSite'>顺义区安泰大街9号中粮祥云小镇北区8号楼10层1001室(汉堡王旁边玻璃转门0804#号电梯)</view>
+        <view class='home_time_phone' bindtap='homePhone'>010-80491370</view>
+      </view>
       <view class='home_time_p' bindtap='homePhone'><image src="../../images/home/iconfont-phone.png"/></view>
     </view>
   </view>
@@ -30,7 +40,7 @@
           </view>
         </view>
         <view class='home_list_li_g'>
-          <button>抢购</button>
+          <view>抢购</view>
         </view>
       </view>
       <view class='nonelist'>{{homemessage}}</view>

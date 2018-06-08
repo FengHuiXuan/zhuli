@@ -2,6 +2,10 @@
 .swiper{
   width: 100%;
   height: 750rpx;
+
+}
+.detail_boxs{
+  padding-bottom:100rpx 
 }
 .swipers{
   width: 100%;
@@ -17,13 +21,16 @@
 .detail_head_h2{
   font-size: 34rpx;
   padding: 34rpx 26rpx;
-  font-weight: 600;
+  font-weight: bold;
   color: #000
 }
 .detail_head_p{
-  font-size: 24rpx;
+  font-size: 28rpx;
   padding: 20rpx 26rpx 40rpx 26rpx;
   border-bottom:10rpx solid #f4f4f4 
+}
+.detail_head_p>text{
+  line-height: 28rpx
 }
 .detail_head_z{
   color: #ee9058
@@ -32,10 +39,12 @@
   color: #bfbfbf;
   text-decoration: line-through;
   margin-left: 15rpx;
+  font-size: 22rpx;
 }
 .detail_head_y{
   color: #919191;
-  float: right
+  float: right;
+  font-size: 20rpx;
 }
 .detail_tab{
   height: 90rpx;
@@ -44,18 +53,41 @@
   justify-content: space-around;
 }
 .detail_tab_li{
-  line-height: 90rpx;
-  font-size: 25rpx;
-  color: #000;
-  
+  color: #000;  
   margin-bottom: -1px 
 }
-.detail_tab .detail_tab_li_active{
+.detail_tab_li{
+  height: 90rpx;
+}
+.detail_tab_li>text{
+  line-height: 86rpx;
+  font-size: 25rpx;
+}
+/* .detail_tab .detail_tab_li_active{
   border-bottom:3px solid #ee9058;
   color: #ee9058;
+} */
+.detail_tab_li_ac{
+  height: 5rpx;
+  display: flex;
+  justify-content: center;
+}
+.detail_tab .detail_tab_li_active{
+  color: #ee9058;
+}
+.detail_tab_li_active .detail_tab_li_ac>view{
+  background: #ee9058;
+}
+.detail_tab_li_ac>view{
+  width: 48rpx;
+  height: 5rpx;
+  background: #fff;
 }
 .detail_message{
-
+  padding-bottom:40rpx 
+}
+.detail_messages_{
+   padding:40rpx 20rpx; 
 }
 .detail_comment{
 
@@ -63,36 +95,42 @@
 .detail_comment_list{
   display:flex;
   flex-direction:column;
-  border-bottom:20rpx solid #f8f8f8;
+  -border-bottom:20rpx solid #f8f8f8;
   padding-bottom:30rpx;
 }
 .detail_comment_list_litle{
-  display:flex;
-  flex-direction:row;
+   display:flex;
+  flex-direction:row; 
   padding-left:40rpx;
   padding-right:40rpx;
   padding-top:20rpx;
 }
 .detail_comment_list_img{
-  width:80rpx;
-  height:80rpx;
+  width:70rpx;
+}
+.detail_comment_list_img image{
+  width:60rpx;
+  height:60rpx;
   border-radius:50rpx;
+  float: right;
 }
 .detail_comment_list_item{
-  width:100%;
+ 
   display:flex;
   flex-direction:column;
   margin-left:20rpx;
   padding-bottom: 50rpx;
-  border-bottom:1px solid #e5e5e5  
+  border-bottom:1px dashed #e5e5e5;
+
+  box-sizing: border-box  
 }
 .detail_comment_list_item_e text{
   font-size:28rpx;
-  line-height: 80rpx
+  line-height: 60rpx
 }
 .detail_comment_list_text{
   font-size:25rpx;
-  color:grey;
+  
   position:absolute;
   right:40rpx;
 }
@@ -100,6 +138,9 @@
   display:flex;
   flex-direction:row;
   align-items:center;
+}
+.detail_comment_list_item_e>text{
+  color:#919191;
 }
 .detail_comment_list_item_messabe{
   display:flex;
@@ -109,23 +150,22 @@
   color: #000;
   line-height: 36rpx;
   margin-bottom: 25rpx;
+  margin-top: 15rpx
 }
 .detail_comment_list_item_img{
-  width: 580rpx;
   height: 160rpx;
   white-space: nowrap;
+
 }
 .detail_comment_list_item_img image{
   width: 160rpx;
   height: 160rpx;
-  background: red;
   margin-right: 15rpx;
 }
 
 .scroll_detail_comment{
   height: 160rpx;
-  width: 100%;
-
+  width: 570rpx;
 }
 .scroll_detail_comment_shangjia{
   margin-top: 50rpx;
@@ -148,12 +188,14 @@
 }
 .scroll_detail_comment_shangjia_j{
   color: #919191;
-  float: right
+  float: right;
+  margin-right:10rpx; 
 }
 .scroll_detail_comment_huifu{
-  margin-left: 31rpx;
+  margin-left: 29rpx;
   font-size: 24rpx;
-  color: #000
+  color: #000;
+  margin-top: 26rpx;
 }
 .bottom_tab{
   position: fixed;
@@ -162,6 +204,7 @@
   bottom: 0;
   height: 100rpx;
   display: flex;
+  border-top: 10rpx solid #f4f4f4;
 }
 .bottom_tab1{
   width: 500rpx;
@@ -175,12 +218,15 @@
 .bottom_tab1_1{
   color: #ee9058;
   font-size: 40rpx;
-  font-weight: 600;
+  font-weight: bold;
   vertical-align: middle
+}
+.noneevaluateList{
+  text-align: center
 }
 .bottom_tab1_2{
   color: #bbb;
-  font-size: 30rpx;
+  font-size: 22rpx;
   text-decoration: line-through;
 }
 .bottom_tab2{
@@ -191,5 +237,8 @@
   font-size: 30rpx;
   line-height: 100rpx;
   text-align: center;
-  font-weight: 600
+  font-weight: bold;
+  border-radius:0;
+  border: none;
+  margin: 0
 } 

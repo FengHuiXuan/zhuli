@@ -1,2 +1,3 @@
-<!--pages/activity/activity.wxml-->
-<text>pages/activity/activity.wxml</text>
+
+ <text>pages/activity/activity.wxml</text>
+<web-view src="https://www.baidu.com/"></web-view> 

@@ -10,9 +10,10 @@ Page({
     homeList:[],
     homeListye:1,
     homemessage:"正在加载...",
-    listbottom:false
+    listbottom:false,
+    listbanerLise:[]
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,18 +24,19 @@ Page({
         page: that.data.homeListye
       },
       success: res => {
-        if (res.data.state == 1) {
+        let data = res.data
+        if (data.state == 1) {
+         
           that.setData({
-            homeListye: res.data.next_page,
-            homeList: res.data.services_list
+            homeListye: data.next_page,
+            homeList: data.services_list,
+            listbanerLise: data.banner_list
           })
         } else if (res.data.state == 0) {
           that.setData({
             homemessage: res.data.message
           })
         }
-        
-        console.log(res)
       },
       complete: res => {
         that.setData({
@@ -42,14 +44,49 @@ Page({
         })
       }
     })
+  
   },
-  homePhone(){
-    wx.makePhoneCall({
-      phoneNumber: '1340000' //仅为示例，并非真实的电话号码
+  previewImg(e){
+
+    let activityData = e.currentTarget.dataset.previewimg
+    app.globalData.activityparticulars = activityData
+    if (activityData.content != ''){
+ 
+      wx.navigateTo({
+        url: '../shopsite/shopsite'
+      })
+      return
+    }
+    if (activityData.url != '') {
+      wx.navigateTo({
+        url: '../index/index?http=' + activityData.url
+      })
+    }
+    
+    
+  },
+  shopSite(e){ //跳转地图页面
+    // wx.navigateTo({
+    //   url:'../shopsite/shopsite'
+    // }),
+
+    var latitude = 40.0898549448
+    var longitude = 116.5356355906
+    wx.openLocation({
+      latitude: latitude,
+      longitude: longitude,
+      name: '紫琪尔国际丰胸美容机构（祥云小镇轻奢店）',
+      scale: 10,
+      address: '安泰大街9号院祥云小镇8号楼10层1001室',
+      scale: 28
     })
   },
-  detailpage(e){
-    console.log(e.currentTarget.dataset.id)
+  homePhone(){ //电话
+    wx.makePhoneCall({
+      phoneNumber: '010-80491370' //仅为示例，并非真实的电话号码
+    })
+  },
+  detailpage(e){  //服务详情页
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: "../detail/detail?id="+id
@@ -86,14 +123,11 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
-  },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function () {  //上啦加载
     let that = this
     if(that.data.listbottom) return 
     that.setData({

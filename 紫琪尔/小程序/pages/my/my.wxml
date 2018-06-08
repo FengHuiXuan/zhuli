@@ -1,6 +1,8 @@
 <view class="my_box">
   <view class='my_box_head'>
-    <view class='my_box_head_'>
+    <image class='my_box_head_image' src='../../images/home/mybg.png'></image>
+    <button class='getuserInfobutton'  wx:if="{{getuserInfobtn}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆</button> 
+    <view wx:else class='my_box_head_'>
       <image src="{{userInfo.avatarUrl}}"/>
       <view>{{userInfo.nickName}}</view>
     </view>
@@ -15,7 +17,7 @@
       </view>
       <view class='my_box_li_text'>
         <view  class='my_box_li_text1'>全部订单</view>
-        <view  class='my_box_li_text2'>共有5个订单</view>
+        <view  class='my_box_li_text2'>共有{{servicesMinenum.order_all}}个订单</view>
       </view>
     </view>
     <view class='my_box_li' data-index='1' bindtap='orderAll'>
@@ -24,7 +26,7 @@
       </view>
       <view class='my_box_li_text'>
         <view  class='my_box_li_text1'>待付款</view>
-        <view  class='my_box_li_text2'>1个待付款</view>
+        <view  class='my_box_li_text2'>{{servicesMinenum.order_payment}}个待付款</view>
       </view>
     </view>
     <view class='my_box_li' data-index='2' bindtap='orderAll'>
@@ -33,7 +35,7 @@
       </view>
       <view class='my_box_li_text'>
         <view  class='my_box_li_text1'>可使用</view>
-        <view  class='my_box_li_text2'>1个可使用订单</view>
+        <view  class='my_box_li_text2'>{{servicesMinenum.order_enable}}个可使用订单</view>
       </view>
     </view>
     <view class='my_box_li' data-index='3' bindtap='orderAll'>
@@ -42,13 +44,13 @@
       </view>
       <view class='my_box_li_text'>
         <view  class='my_box_li_text1'>待评价</view>
-        <view  class='my_box_li_text2'>1个待评价订单</view>
+        <view  class='my_box_li_text2'>{{servicesMinenum.order_evaluate}}个待评价订单</view>
       </view>
     </view>
   </view>
 
 </view>
-<view class='getuserInfo' wx:if="{{getuserInfobtn}}">
+<!-- <view class='getuserInfo' wx:if="{{getuserInfobtn}}">
     <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取信息</button> 
-</view>
+</view> -->
 

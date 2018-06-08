@@ -1,0 +1,26 @@
+/* pages/shopsite/shopsite.wxss */
+.serve-particulars{
+  width: 100%;
+  box-sizing: border-box;
+  height: 160rpx;
+  padding: 50rpx;
+  padding-bottom: 30rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/*rgba(238, 144, 88, .8);  */
+.serve-particulars>button{
+  width:100%;
+  height:80rpx;
+  background:rgba(235, 235, 235, .3);
+  color:#ee9058;
+  font-size:30rpx;
+  font-weight:bold;
+  line-height:80rpx;
+
+}
+.shop_box image{
+  width: 100%;
+}

@@ -6,7 +6,8 @@
     wx:for="{{['全部订单','待付款','可使用','可评价']}}" 
     wx:key
     class='orderList_tabbar_li {{index == orderList_tabbar? "orderList_tabbar_li_active":""}}'>
-      <text>{{item}}</text>
+      <text class='orderList_tabbar_li_text'>{{item}}</text>
+      <view class='orderList_tabbar_li_text2'><view></view></view>
     </view>
   </view>
   <view class='orderList_neir'>
@@ -19,7 +20,7 @@
         <image class='orderList_commodity_img' src="{{item.service_thumb_url}}"/>
         <view class='orderList_commodity_particulars'>
           <view class='orderList_commodity_particulars1'><text>{{item.services_name}}</text></view>
-          <view class='orderList_commodity_particulars2'><text>X{{item.services_sum}}</text></view>
+          <view class='orderList_commodity_particulars2'><text>x{{item.services_sum}}</text></view>
         </view>
         <view class='orderList_commodity_price'>
           ￥{{item.real_amount}}
@@ -27,49 +28,48 @@
       </view>
       <view class='orderList_btn'>
         <view></view>
-        <text bindtap='evaluate_'  wx:if="{{item.evaluate_id == 0 && (item.status == 2||item.status == 3)}}">评价</text>
-        <text bindtap='pay_delete'  data-status='{{item.status}}' data-id='{{item.id}}' data-index='{{index}}'
-        wx:if="{{item.status == 0||item.status == 4}}">{{item.status == 0?'立即支付':item.status == 4?'删除':''}}</text>
+        <!--wx:if="{{item.evaluate_id == 0 && (item.status == 2||item.status == 3)}}"  -->
+        <text bindtap='evaluate_' data-item='{{item}}' wx:if="{{item.evaluate_id == 0 && item.status == 3}}"  >评价</text>
+        
         <text bindtap='orderpay' data-status='{{item.status}}' data-id='{{item.id}}' data-index='{{index}}'
+        data-services_id='{{item.services_id}}' 
         wx:if="{{item.status == 0||item.status == 3}}">{{item.status == 0?'取消订单':item.status == 3?'再次购买':''}}</text>
-        <text bindtap='orderList_rem' 
-        wx:if="{{item.services_rem > 0 && (item.status == 1||item.status == 2)}}" class='orderList_btn1'>消费码</text>
+        <text bindtap='pay_delete'  data-status='{{item.status}}' data-id='{{item.id}}' data-index='{{index}}'
+        wx:if="{{item.status == 0||item.status == 3||item.status == 4}}">{{item.status == 0?'立即支付':item.status == 3?'消费记录':item.status == 4?'删除':''}}</text>
+        <!--wx:if="{{item.services_rem > 0 && (item.status == 1||item.status == 2)}}"  -->
+        <text bindtap='orderList_rem' data-id='{{item.id}}'
+        wx:if="{{item.services_rem > 0 && item.status == 1}}"
+        class='orderList_btn1'>消费码</text>
       </view>
     </view>
-    
+    <view class='nonelists' wx:if="{{nonelists && orderList.length == 0}}">
+      <image src='../../images/home/nonedata.png'/>
+      <view><text>没有订单~</text></view>
+    </view>
   </view>
-  <view class='nonelist' wx:if="{{orderList.length == 0}}">
+  <view class='nonelist' wx:if="{{nonelist && orderList.length != 0}}">
     {{nonelist}}
   </view>
 </view>
 <view class='orderList_pup' hidden='{{spendcalendar}}'>
   <view class='orderList_kuang'>
     <image bindtap='close_pup' class='orderList_kuang_close' src='../../images/home/close.png'></image>
-    <view class='orderList_kuang_head'>
+    <view wx:if="{{consumptionRecord}}" class='orderList_kuang_head'>
       <view class='orderList_kuang_yard'>
         <view><text>消费码</text></view>
-        <image/>
+          <image src='../../images/home/ma.png'/>  
       </view>
-      <view class='orderList_kuang_phone'>18712345678</view>
-      <view class='orderList_kuang_time'>下单时间：2018.05.15</view>
-    </view>
+      <view class='orderList_kuang_phone'>{{consumptionCode.cons_code}}</view>
+      <view class='orderList_kuang_time'>下单时间：{{consumptionCode.create_at}}</view>
+    </view> 
     <view class='orderList_kuang_body'>
-      <view class='orderList_kuang_body_li'>
-        <text>消费</text>
-        <text>2018.05.15</text>
-      </view>
-      <view class='orderList_kuang_body_li'>
-        <text>消费</text>
-        <text>2018.05.15</text>
-      </view>
-      <view class='orderList_kuang_body_li'>
-        <text>消费</text>
-        <text>2018.05.15</text>
-      </view>
-      <view class='orderList_kuang_body_li'>
-        <text>消费</text>
-        <text>2018.05.15</text>
-      </view>
+      <scroll-view class='orderList_kuang_body_scroll-view' scroll-with-animation = 'true' scroll-right scroll-y>
+        <view wx:for="{{consumptionCode.cons_list}}" class='orderList_kuang_body_li'>
+          <text>消费</text>
+          <text>{{item.format_time}}</text>
+        </view>   
+        <view wx:if="{{consumptionCode.cons_list.length == 0}}" class='orderList_kuang_body_none'>暂无消费记录</view>
+      </scroll-view >
     </view>
   </view>
-</view>
+</view> 

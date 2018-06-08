@@ -32,16 +32,31 @@ App({
       }
     })
     that.globalData.logins(res => {
-      console.log(res)
+   
     })
   },
+  
   globalData: {
     userInfo: null,
+    apis: 'https://services.17link.cc/',
+    //apis: 'https://test020.17link.cc/',
     httprequest(RM,obj){
       wx.request({
-        url:'http://192.168.0.173/'+RM,
+        url: this.apis+RM,
         method:'GET',
         ...obj
+      })
+    },
+    pup(texts) {
+      wx.showModal({
+        title: '提示',
+        content: texts,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
       })
     },
     logins(func){
@@ -55,7 +70,7 @@ App({
                 wx.getUserInfo({ 
                   success: res => {
                     wx.setStorageSync('userInfo', res.userInfo)
-                    console.log(123, resCode.code ,res.rawData)
+                    
                     that.httprequest('post/login',{  //获取
                       data:{
                         'code': resCode.code,

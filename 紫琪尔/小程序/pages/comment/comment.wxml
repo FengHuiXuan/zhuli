@@ -1,21 +1,20 @@
 <view class='comment_box'>
   <view class='comment_box_head'>
-    <image src='../../images/home/list.png'></image>
+    <image src='{{commentodel.service_thumb_url}}'></image>
     <view class='comment_box_head_center'>
-      <view class='comment_box_head_center1'>单人美容</view>
-      <view class='comment_box_head_center2'>X1</view>
-      <view class='comment_box_head_center3'>￥456</view>
+      <view class='comment_box_head_center1'>{{commentodel.services_name}}</view>
+      <view class='comment_box_head_center2'>X{{commentodel.services_sum}}</view>
+      <view class='comment_box_head_center3'>￥{{commentodel.real_amount}}</view>
     </view>
     <view class='comment_box_head_right'>></view>
   </view>
   <view class='comment_box_'>
-    <view class="comment_box_textarea"><textarea placeholder="请输入评价内容"></textarea></view>
+    <view class="comment_box_textarea"><textarea bindinput='onInputContent' placeholder="请输入评价内容"></textarea></view>
     <view class="comment_box_img">
       <view wx:for="{{imglist}}">
-        
         <view>
-          <image class='comment_box_close' data-index='{index}' bindtap='failDelete' src="../../images/home/pay-fail.png"/>
-          <image class='comment_box_image' src="{{item}}"/>
+          <image class='comment_box_close' data-index='{index}'  bindtap='failDelete' src="../../images/home/pay-fail.png"/>
+          <image class='comment_box_image' src="{{item.pic}}"/>
         </view>
       </view>
       <view wx:if = '{{imglist.length == 9 ? false : true}}' bindtap='addImg'><image class='comment_box_imgadd' src='../../images/home/upload-pic.png'/></view>

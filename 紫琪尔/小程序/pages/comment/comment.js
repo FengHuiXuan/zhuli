@@ -1,29 +1,70 @@
 // pages/comment/comment.js
-const App = getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imglist:[]
+    imglist:[],
+    commentodel:'',
+    reason:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-
+    console.log(app.globalData.commentodel)
+    this.setData({
+      commentodel: app.globalData.commentodel
+    })
   },
   submitp(){
-    console.log(1)
-    wx.chooseLocation({
-      success: function (res) {
-        console.log(res)
+    let that = this
+    let reason = that.data.reason
+    console.log(that.data.imglist)
+    let imglistId = []
+    imglistId = that.data.imglist.map(item => {
+       return item.id
+     })
+    console.log(imglistId)
+    app.globalData.httprequest('userEvaluate', {
+      data: {
+        'session3rd': wx.getStorageSync('3rd_session'),
+        services_order_id: app.globalData.commentodel.id,
+        evaluate: reason,
+        pic_json: imglistId
+      },
+      success: res => {
+        if (res.data.state == 1){
+          wx.showToast({
+            title: '评价成功',
+            icon: 'none',
+            duration: 2000
+          })
+          wx.redirectTo({
+            url: '../orderList/orderList?index=""'
+          })
+
+        }
+
       }
     })
-
+  },
+  onInputContent(e) {
+    if (e.detail.value == ''){
+      wx.showToast({
+        title: '评价不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    } 
+  
+    this.setData({
+      reason: e.detail.value
+    })
   },
   addImg(){
     let that = this
@@ -33,19 +74,36 @@ Page({
       count:1,
       sizeType:'compressed',
       success(res){
-        let arr = res.tempFilePaths
-        let arr2 = that.data.imglist.concat(...arr)
-        if (arr2.length > 9){
-          arr2.length = 9
-          wx.showToast({
-            title: '最多上传9张图片',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        that.setData({
-          imglist: arr2
+        console.log(res)
+      
+        console.log(app.globalData.apis, res.tempFilePaths[0])
+        wx.uploadFile({
+          url: app.globalData.apis+ 'Ajax/upload', 
+          filePath: res.tempFilePaths[0],
+          name: 'files',
+          success: function (res) {
+            
+            let datas = JSON.parse(res.data) 
+            console.log(datas)
+            if (datas.status){
+              let arr = that.data.imglist
+              arr.push(datas)
+              if (arr.length > 9) {
+                arr.length = 9
+                wx.showToast({
+                  title: '最多上传9张图片',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }
+              that.setData({
+                imglist: arr
+              })
+            }
+            
+          }
         })
+        
       }
     })
   },
